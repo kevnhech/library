@@ -1,0 +1,41 @@
+body {
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h2 {
+  margin: 0;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.flexbox div {
+  padding: 16px;
+  width: 175px;
+  border: 2px solid #000;
+  border-radius: 2px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.flexbox div p {
+  margin: 0;
+}
+
+.primary-btn {
+  background-color: #000;
+  color: #fff;
+  border-style: none;
+  padding: 8px 16px;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  width: fit-content;
+}

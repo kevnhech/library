@@ -1,6 +1,5 @@
-const defaultDomState = document.body.innerHTML;
-const body = document.querySelector("body");
 const myLibrary = [];
+const flexbox = document.querySelector(".flexbox");
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -28,8 +27,12 @@ function addBookToLibrary() {
 }
 
 function displayLibrary() {
-  document.body.innerHTML = defaultDomState;
+  // document.querySelector(".flexbox").innerHTML = '';
   for (let i = 0; i < myLibrary.length; i++) {
+    if (i != myLibrary.length - 1) {
+      continue;
+    }
+
     let card = document.createElement("div");
     let bookTitle = document.createElement("p");
     let bookAuthor = document.createElement("p");
@@ -46,12 +49,10 @@ function displayLibrary() {
     card.appendChild(bookPages);
     card.appendChild(bookInfo);
 
-    body.appendChild(card);
+    flexbox.appendChild(card);
   }
 }
 
 // The Hobbit, J.R.R. Tolkien, 295
 // Dracula, Bram Stoker, 418
 // The Metamorphosis, Franz Kafka, 70
-
-// Write a function that loops through the array and displays each book on the page. You can display them in some sort of table, or each on their own “card”.
