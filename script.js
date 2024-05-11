@@ -27,7 +27,6 @@ function addBookToLibrary() {
 }
 
 function displayLibrary() {
-  // document.querySelector(".flexbox").innerHTML = '';
   for (let i = 0; i < myLibrary.length; i++) {
     if (i != myLibrary.length - 1) {
       continue;
