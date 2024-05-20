@@ -54,8 +54,10 @@ function displayLibrary() {
     flexbox.appendChild(card);
 
     removeBtn.addEventListener("click", function() {
-      myLibrary.splice(myLibrary.indexOf(myLibrary[i]), 1);
+      // figure out how to target object literan in the array and DOM properly to remove them
+      myLibrary.splice(myLibrary.indexOf(myLibrary[i]), 1); 
       flexbox.removeChild(flexbox.childNodes[i]);
+      console.log(i);
     });
   }
 }
