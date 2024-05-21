@@ -54,18 +54,10 @@ function displayLibrary() {
     flexbox.appendChild(card);
 
     removeBtn.addEventListener("click", function() {
-      // figure out how to target object literan in the array and DOM properly to remove them
-      myLibrary.splice(myLibrary.indexOf(myLibrary[i]), 1); 
-      flexbox.removeChild(flexbox.childNodes[i]);
-      console.log(i);
+      flexbox.removeChild(card);
     });
   }
 }
-
-// add an event listener for remove buttons that removes the current book from the array and webpage
-
-// Add a button on each book's display to remove the book from the library.
-// You will need to associate your DOM elements with the actual book objects in some way. One easy solution is giving them a data-attribute that corresponds to the index of the library array.
 
 // The Hobbit, J.R.R. Tolkien, 295
 // Dracula, Bram Stoker, 418
