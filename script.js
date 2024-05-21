@@ -6,13 +6,6 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = function() {
-    if (read == 'yes') {
-      return `${title} by ${author}, ${pages} pages, read`
-    } else {
-      return `${title} by ${author}, ${pages} pages, not read yet`
-    }
-  }
 }
 
 function addBookToLibrary() {
@@ -36,22 +29,35 @@ function displayLibrary() {
     let bookTitle = document.createElement("p");
     let bookAuthor = document.createElement("p");
     let bookPages = document.createElement("p");
-    let bookInfo = document.createElement("p");
+    let bookRead = document.createElement("button");
     let removeBtn = document.createElement("button");
 
     bookTitle.textContent = myLibrary[i].title;
     bookAuthor.textContent = myLibrary[i].author;
     bookPages.textContent = `${myLibrary[i].pages} pages`;
-    bookInfo.textContent = myLibrary[i].info();
-    removeBtn.textContent = "Remove"
+    removeBtn.textContent = "Remove";
+
+    if (myLibrary[i].read == "yes") {
+      bookRead.textContent = "Read";
+    } else {
+      bookRead.textContent = "Not Read";
+    }
 
     card.appendChild(bookTitle);
     card.appendChild(bookAuthor);
     card.appendChild(bookPages);
-    card.appendChild(bookInfo);
+    card.appendChild(bookRead);
     card.appendChild(removeBtn);
 
     flexbox.appendChild(card);
+
+    bookRead.addEventListener("click", function() {
+      if (bookRead.textContent == "Read") {
+        bookRead.textContent = "Not Read"
+      } else {
+        bookRead.textContent = "Read"
+      }
+    });
 
     removeBtn.addEventListener("click", function() {
       flexbox.removeChild(card);
