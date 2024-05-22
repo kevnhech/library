@@ -29,8 +29,11 @@ function displayLibrary() {
     let bookTitle = document.createElement("p");
     let bookAuthor = document.createElement("p");
     let bookPages = document.createElement("p");
+    let buttonRow = document.createElement("div");
     let bookRead = document.createElement("button");
     let removeBtn = document.createElement("button");
+
+    card.setAttribute("class", "book");
 
     bookTitle.textContent = myLibrary[i].title;
     bookAuthor.textContent = myLibrary[i].author;
@@ -39,23 +42,33 @@ function displayLibrary() {
 
     if (myLibrary[i].read == "yes") {
       bookRead.textContent = "Read";
+      bookRead.style.backgroundColor = "lime"
+      bookRead.style.color = "black"
     } else {
       bookRead.textContent = "Not Read";
+      bookRead.style.backgroundColor = "red";
+      bookRead.style.color = "white";
     }
+
+    buttonRow.appendChild(bookRead);
+    buttonRow.appendChild(removeBtn);
 
     card.appendChild(bookTitle);
     card.appendChild(bookAuthor);
     card.appendChild(bookPages);
-    card.appendChild(bookRead);
-    card.appendChild(removeBtn);
+    card.appendChild(buttonRow);
 
     flexbox.appendChild(card);
 
     bookRead.addEventListener("click", function() {
       if (bookRead.textContent == "Read") {
         bookRead.textContent = "Not Read"
+        bookRead.style.backgroundColor = "red";
+        bookRead.style.color = "white";
       } else {
         bookRead.textContent = "Read"
+        bookRead.style.backgroundColor = "lime"
+        bookRead.style.color = "black"
       }
     });
 

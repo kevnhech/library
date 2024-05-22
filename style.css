@@ -15,7 +15,7 @@ h2 {
   gap: 16px;
 }
 
-.flexbox div {
+.book {
   padding: 16px;
   width: 175px;
   border: 2px solid #000;
@@ -25,7 +25,23 @@ h2 {
   flex-direction: column;
 }
 
-.flexbox div p {
+.book div {
+  display: flex;
+  gap: 4px;
+}
+
+.book div button {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 16px;
+  background-color: #fff;
+}
+
+.book div button:first-child {
+  border-style: none;
+}
+
+.book p {
   margin: 0;
 }
 
