@@ -33,7 +33,9 @@ function displayLibrary() {
     let bookRead = document.createElement("button");
     let removeBtn = document.createElement("button");
 
+
     card.setAttribute("class", "book");
+    bookTitle.style.fontWeight = "700";
 
     bookTitle.textContent = myLibrary[i].title;
     bookAuthor.textContent = myLibrary[i].author;
