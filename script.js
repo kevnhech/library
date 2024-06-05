@@ -62,13 +62,15 @@ function displayLibrary() {
 
     flexbox.appendChild(card);
 
-    bookRead.addEventListener("click", function() {
+    bookRead.addEventListener("click", () => {
       if (bookRead.textContent == "Read") {
         bookRead.textContent = "Not Read"
+        myLibrary[Array.from(flexbox.childNodes).indexOf(card)].read = 'no';
         bookRead.style.backgroundColor = "red";
         bookRead.style.color = "white";
       } else {
         bookRead.textContent = "Read"
+        myLibrary[Array.from(flexbox.childNodes).indexOf(card)].read = 'yes';
         bookRead.style.backgroundColor = "lime"
         bookRead.style.color = "black"
       }
