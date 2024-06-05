@@ -74,7 +74,8 @@ function displayLibrary() {
       }
     });
 
-    removeBtn.addEventListener("click", function() {
+    removeBtn.addEventListener("click", () => {
+      myLibrary.splice(Array.from(flexbox.childNodes).indexOf(card), 1);
       flexbox.removeChild(card);
     });
   }
