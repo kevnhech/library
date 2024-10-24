@@ -20,8 +20,11 @@ class Book {
   }
 
   static displayLibrary() {
-    flexbox.textContent = "";
     for (let i = 0; i < myLibrary.length; i++) {
+      if (i != myLibrary.length - 1) {
+        continue;
+      }
+  
       let card = document.createElement("div");
       let bookTitle = document.createElement("p");
       let bookAuthor = document.createElement("p");
@@ -81,7 +84,6 @@ class Book {
   }
 }
 
-myLibrary.push(new Book("The Hobbit", "J.R.R. Tolkien", "295", "no"));
-myLibrary.push(new Book("Dracula", "Bram Stoker", "418", "no"));
-myLibrary.push(new Book("The Metamorphosis", "Franz Kafka", "70", "no"));
-Book.displayLibrary();
+// The Hobbit, J.R.R. Tolkien, 295
+// Dracula, Bram Stoker, 418
+// The Metamorphosis, Franz Kafka, 70
