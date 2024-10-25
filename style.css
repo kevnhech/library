@@ -59,3 +59,19 @@ h2 {
   cursor: pointer;
   width: fit-content;
 }
+
+form {
+  width: fit-content;
+}
+
+p * {
+  display: block;
+}
+
+.read {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}

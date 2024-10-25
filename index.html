@@ -13,6 +13,27 @@
 <body>
   <h2>Library App</h2>
   <div class="flexbox"></div>
-  <button class="primary-btn" onclick="Book.addBook()">New Book</button>
+  <button class="primary-btn">New Book</button>
+  <form class="hidden">
+    <p>
+      <label for="title">
+        <span>Book title:</span>
+        <input type="text" id="title" name="title">
+      </label>
+      <label for="author">
+        <span>Author name:</span>
+        <input type="text" id="author" name="author">
+      </label>
+      <label for="pages">
+        <span>Number of pages:</span>
+        <input type="number" id="pages" name="pages">
+      </label>
+      <label for="read" class="read">
+        <span>Read?</span>
+        <input type="checkbox" id="read" name="read">
+      </label>
+      <button class="form-btn">Submit</button>
+    </p>
+  </form>
 </body>
 </html>
