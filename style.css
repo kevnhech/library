@@ -75,3 +75,8 @@ p * {
 .hidden {
   display: none;
 }
+
+input:invalid {
+  appearance: none;
+  border: 1px solid #f00;
+}

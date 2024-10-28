@@ -18,11 +18,35 @@ class Book {
     const pages = document.getElementById("pages");
     const read = document.getElementById("read");
 
+    title.addEventListener("input", (event) => {
+      if (title.validity.valueMissing) {
+        title.setCustomValidity("I am expecting a title of a book!");
+      } else {
+        title.setCustomValidity("");
+      }
+    });
+
+    author.addEventListener("input", (event) => {
+      if (author.validity.valueMissing) {
+        author.setCustomValidity("I am expecting an author name!");
+      } else {
+        author.setCustomValidity("");
+      }
+    });
+
+    pages.addEventListener("input", (event) => {
+      if (pages.validity.valueMissing) {
+        pages.setCustomValidity("Please enter the amount of pages this book has.");
+      } else {
+        pages.setCustomValidity("");
+      }
+    });
+
     newBookBtn.addEventListener("click", (event) => {
       if (form.classList.value == "hidden") {
-        form.classList.remove("hidden");
+        form.className = "";
       } else {
-        form.classList.add("hidden");
+        form.className = "hidden";
       }
 
       title.value = "";
@@ -38,13 +62,15 @@ class Book {
     const submitBtn = document.querySelector(".form-btn");
 
     submitBtn.addEventListener("click", (event) => {
-      myLibrary.push(new Book(title.value, author.value, pages.value, read.checked));
-      Book.displayLibrary();
-      form.classList.add("hidden");
-      title.value = "";
-      author.value = "";
-      pages.value = "";
-      read.checked = false;
+      if (!title.validity.valueMissing && !author.validity.valueMissing && !pages.validity.valueMissing) {
+        myLibrary.push(new Book(title.value, author.value, pages.value, read.checked));
+        Book.displayLibrary();
+        title.value = "";
+        author.value = "";
+        pages.value = "";
+        read.checked = false;
+        form.className = "hidden";
+      }
     });
   }
 
