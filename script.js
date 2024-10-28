@@ -55,13 +55,10 @@ class Book {
       read.checked = false;
     });
 
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-    });
-
     const submitBtn = document.querySelector(".form-btn");
 
     submitBtn.addEventListener("click", (event) => {
+      event.preventDefault();
       if (!title.validity.valueMissing && !author.validity.valueMissing && !pages.validity.valueMissing) {
         myLibrary.push(new Book(title.value, author.value, pages.value, read.checked));
         Book.displayLibrary();
